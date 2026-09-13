@@ -10,6 +10,9 @@ function addStylesheet() {
 
 export function setupProgress(element) {
     addStylesheet();
+
+    element.classList.add("progress");
+
     element.innerHTML = `
     <svg class="progress-ring" width="120" height="120" style="display: block">
         <circle 
@@ -42,8 +45,8 @@ export function setupProgress(element) {
 export function setProgressValue(element, value) {
     let normalizedValue = Number(value);
     if (Number.isNaN(normalizedValue)) normalizedValue = 0;
-    if (value > 100) normalizedValue = 100;
-    if (value < 0) normalizedValue = 0;
+    if (normalizedValue > 100) normalizedValue = 100;
+    if (normalizedValue < 0) normalizedValue = 0;
 
     const circle = element.querySelector(".progress-ring-circle");
     circle.style.strokeDashoffset = 100 - normalizedValue;
