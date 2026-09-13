@@ -24,18 +24,19 @@ html, body {
   width: 320px;
   height: 568px;
   padding: 20px;
-  gap: 85px;
+  gap: 92px;
 }
 
 .demo-wrapper.landscape {
   width: 568px;
   height: 320px;
   flex-direction: row;
+  gap: 85px;
 }
 
 .demo-title {
   position: absolute;
-  top: 20px;
+  top: 26px;
   left: 20px;
   font: 16px/20px sans-serif;
 }
