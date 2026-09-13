@@ -1,0 +1,24 @@
+.progress {
+    width: 120px;
+    height: 120px;
+}
+
+.progress.hidden {
+    visibility: hidden;
+}
+
+.progress.animated {
+    animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.progress-ring-circle {
+    transition: stroke-dashoffset 0.3s ease;
+}

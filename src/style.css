@@ -1,0 +1,125 @@
+html, body {
+  margin: 0;
+  padding: 0;
+
+  font-family: sans-serif;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+.demo-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  box-sizing: border-box;
+
+  width: 320px;
+  height: 568px;
+  padding: 20px;
+  gap: 85px;
+}
+
+.demo-wrapper.landscape {
+  width: 568px;
+  height: 320px;
+  flex-direction: row;
+}
+
+.demo-title {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font: 16px/20px sans-serif;
+}
+
+.controls-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: start;
+}
+
+.value-wrapper, .animate-wrapper, .hidden-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.value {
+  box-sizing: border-box;
+
+  width: 46px;
+  height: 30px;
+  padding: 0 6px;
+
+  border: 1px solid black;
+  border-radius: 999px;
+
+  background: white;
+
+  font: inherit;
+  font-size: 16px;
+  text-align: center;
+  outline: none;
+
+  /* Remove default arrows - Firefox */
+  appearance: textfield;
+}
+
+/* Remove default arrows - all but Firefox */
+.value::-webkit-inner-spin-button,
+.value::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 28px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  background: #dfe6f0;
+  border-radius: 999px;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+
+  width: 24px;
+  height: 24px;
+  left: 2px;
+  top: 2px;
+
+  background: white;
+  border-radius: 50%;
+
+  transition: transform 0.2s;
+}
+
+.switch input:checked + .slider {
+  background: #005dff;
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(16px);
+}
